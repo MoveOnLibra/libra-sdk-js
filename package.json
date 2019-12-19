@@ -1,0 +1,29 @@
+{
+  "name": "libra-sdk-mol",
+  "version": "1.0.0",
+  "description": "Javascript SDK for Libra Network powered by MoveOnLibra OpenAPI",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoveOnLibra/libra-sdk-js.git"
+  },
+  "keywords": [
+    "Libra",
+    "MoveOnLibra",
+    "Move"
+  ],
+  "author": "MoveOnLibra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MoveOnLibra/libra-sdk-js/issues"
+  },
+  "homepage": "https://github.com/MoveOnLibra/libra-sdk-js#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
