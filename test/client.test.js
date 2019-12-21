@@ -11,7 +11,7 @@ describe('#get_balance()', function() {
     var client = new LibraClient("testnet", appkey);
     console.log(client);
     assert.equal(2.0, 2);
-    data = await client.get_balance("000000000000000000000000000000000000000000000000000000000a550c18");
+    data = await client.getAccountBalance("000000000000000000000000000000000000000000000000000000000a550c18");
     assert(data.balance > 0)
     return data;
   });
