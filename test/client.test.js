@@ -2,17 +2,6 @@
 const LibraClient = require('../lib/index.js');
 const assert = require('assert');
 
-describe('#check_param()', function() {
-  it('should raise error without network', async function() {
-    assert.throws(
-      () => {
-        client = new LibraClient();
-      },
-      Error
-    );
-  });
-});
-
 describe('#debugKey()', function() {
   this.timeout(30000);
   it('respond with matching records', async function() {
@@ -22,6 +11,7 @@ describe('#debugKey()', function() {
     assert.equal(2.0, 2);
     data = await client.authkeyAPI.debugKey();
     assert.equal(data.token, appkey);
+    assert.equal(data.network, "testnet");
     console.log(data);
     return data;
   });
@@ -31,7 +21,6 @@ describe('#get_balance()', function() {
   this.timeout(15000);
   it('respond with matching records', async function() {
     var client = new LibraClient("testnet");
-    //console.log(client);
     data = await client.addressAPI.getAccountBalance("000000000000000000000000000000000000000000000000000000000a550c18");
     assert(data.balance > 0)
     console.log(data)
