@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Getting Started</title>
+	<script src="https://unpkg.com/libra-sdk-mol/dist/moveonlibra.browser.js"></script>
+</head>
+
+<body>
+	<script>
+		var client = new LibraClient("testnet");
+		async function getBalance(){
+			data = await client.addressAPI.getAccountBalance("000000000000000000000000000000000000000000000000000000000a550c18");
+			console.log(data);
+			alert(data.balance);
+		}
+		getBalance();
+	</script>
+</body>
+
+</html>
