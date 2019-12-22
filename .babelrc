@@ -3,11 +3,12 @@
     [
       "@babel/preset-env",//https://babeljs.io/docs/en/babel-preset-env
       { 
-        "targets": "> 0.25%, not dead"
+        "targets": {
+          "chrome": "58"
+        }
         //https://jakearchibald.com/2017/es-modules-in-browsers/#nomodule-for-backwards-compatibility
       }
     ]
   ],
-  "plugins": [
-  ]
+  "plugins": ["@babel/plugin-transform-async-to-generator"]
 }

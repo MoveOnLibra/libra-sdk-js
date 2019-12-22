@@ -1,9 +1,12 @@
 {
   "name": "libra-sdk-mol",
   "version": "1.0.0",
-  "description": "Javascript SDK for Libra Network powered by MoveOnLibra OpenAPI",
+  "description": "Javascript SDK for Libra Network and Move Smart Contract powered by MoveOnLibra OpenAPI",
   "scripts": {
-    "build": "babel lib -d dist",
+    "dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.dev.js --progress --watch",
+    "build": "npm run build:browser && npm run build:common",
+    "build:browser": "cross-env NODE_ENV=production webpack --config config/webpack.config.browser.js --progress --hide-modules",
+    "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules",
     "test": "npm-run-all build test:unit",
     "test:unit": "mocha"
   },
@@ -28,8 +31,15 @@
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-async-to-generator": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
     "mocha": "^6.2.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
   }
 }
