@@ -1,6 +1,6 @@
 {
   "name": "libra-sdk-mol",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Javascript SDK for Libra Network and Move Smart Contract powered by MoveOnLibra OpenAPI",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.dev.js --progress --watch",
