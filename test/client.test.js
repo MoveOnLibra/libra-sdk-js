@@ -34,7 +34,7 @@ describe('#get_transactions()', function() {
     var client = new LibraClient("testnet");
     data = await client.transactionAPI.getTransactions(2);
     //params passed to axios: { start_version: 2, limit: undefined }
-    assert(len(data) == 1)
+    assert(data.length == 1)
     console.log(data);
     return data;
   });
