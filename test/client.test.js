@@ -27,3 +27,15 @@ describe('#get_balance()', function() {
     return data;
   });
 });
+
+describe('#get_transactions()', function() {
+  this.timeout(15000);
+  it('omit optional param limit and get default number of txs which is 1', async function() {
+    var client = new LibraClient("testnet");
+    data = await client.transactionAPI.getTransactions(2);
+    //params passed to axios: { start_version: 2, limit: undefined }
+    assert(len(data) == 1)
+    console.log(data);
+    return data;
+  });
+});
