@@ -35,6 +35,19 @@ describe('#check_param()', function () {
             }
         );
     });
+    it('mint should have receiver_account_address', async function () {
+        var client = new LibraClient("testnet");
+        account = {"address": ""}
+        assert.rejects(
+            async () => {
+                return await client.transactionAPI.mintMol(account, 1);
+            },
+            {
+                name: 'Error',
+                message: '{"address":""} does not have requried param: receiver_account_address'
+            }
+        );
+    });
 });
 
 
