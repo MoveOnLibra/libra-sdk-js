@@ -23,6 +23,18 @@ describe('#check_param()', function () {
             }
         );
     });
+    it('NaN is not integer', async function () {
+        var client = new LibraClient("testnet");
+        assert.rejects(
+            async () => {
+                await client.transactionAPI.getTransactions(NaN);
+            },
+            {
+                name: 'Error',
+                message: "NaN is not integer: limit"
+            }
+        );
+    });
     it('limit should be integer', async function () {
         var client = new LibraClient("testnet");
         assert.rejects(
