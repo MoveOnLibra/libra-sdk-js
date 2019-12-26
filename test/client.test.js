@@ -21,8 +21,11 @@ describe('#get_balance()', function() {
   this.timeout(15000);
   it('respond with matching records', async function() {
     var client = new LibraClient("testnet");
-    data = await client.addressAPI.getAccountBalance("000000000000000000000000000000000000000000000000000000000a550c18");
+    address = "000000000000000000000000000000000000000000000000000000000a550c18"
+    data = await client.addressAPI.getAccountBalance(address);
     assert(data.balance > 0)
+    data2 = await client.addressAPI.getAccountBalance({"address":address});
+    assert.deepEqual(data, data2)
     console.log(data)
     return data;
   });

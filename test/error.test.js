@@ -11,6 +11,30 @@ describe('#check_param()', function () {
             Error
         );
     });
+    it('start_version should be integer', async function () {
+        var client = new LibraClient("testnet");
+        assert.rejects(
+            async () => {
+                await client.transactionAPI.getTransactions("x");
+            },
+            {
+                name: 'Error',
+                message: "start_version's type should be integer, but real type is string"
+            }
+        );
+    });
+    it('limit should be integer', async function () {
+        var client = new LibraClient("testnet");
+        assert.rejects(
+            async () => {
+                await client.transactionAPI.getTransactions(1, "x");
+            },
+            {
+                name: 'Error',
+                message: "limit's type should be integer, but real type is string"
+            }
+        );
+    });
 });
 
 
