@@ -31,7 +31,7 @@ describe('#check_param()', function () {
             },
             {
                 name: 'Error',
-                message: "NaN is not integer: limit"
+                message: "start_version's type should be integer, but real type is number"
             }
         );
     });
