@@ -112,7 +112,7 @@ You can access the MoveOnLibra public API without any prerequisites, there are 3
 Following API need a token to access:
 
 * **Wallet**, all wallet API need API token to access.
-* **Move**, all move API need API token to access.
+* **Move**, (TODO) all move API need API token to access, currently not available.
 * **Transaction**, all **POST** method API under Transaction group need API token to access except `mint`.
 
 
@@ -169,16 +169,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVmErrorCodes**](docs/api/libra_api.md#getVmErrorCodes ) | **GET** /v1/libra/vm_errors | Get all error codes and explanations of vm errors when execute transactions
 [**getVmErrorCode**](docs/api/libra_api.md#getVmErrorCode ) | **GET** /v1/libra/vm_errors/{code} | Get error explanation for a vm error by code
-
-### MoveAPI
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**compileModule**](docs/api/move_api.md#compileModule ) | **POST** /v1/move/compile/module | Compile move module of the given source file
-[**compileScript**](docs/api/move_api.md#compileScript ) | **POST** /v1/move/compile/script | Compile move script of the given source file
-[**getCode**](docs/api/move_api.md#getCode ) | **GET** /v1/move/download/{code_id} | Download compiled move bytecode by id
-[**publish**](docs/api/move_api.md#publish ) | **POST** /v1/move/publish | Publish move module on-chain
-[**execute**](docs/api/move_api.md#execute ) | **POST** /v1/move/execute | Execute custom move script on-chain
 
 ### TransactionAPI
 
