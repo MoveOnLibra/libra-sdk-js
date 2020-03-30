@@ -215,7 +215,7 @@ Mint micro-libra coins to an account.
 const appkey = "*****" // your app key
 var client = new LibraClient("testnet", appkey);
 try{
-    data = await client.TransactionAPI.mint(receiver_account_address, number_of_micro_libra, force_offical);
+    data = await client.TransactionAPI.mint(receiver_account_address, auth_key_prefix, number_of_micro_libra, force_offical);
     console.log(data) //SignedTransaction
 } catch (error) {
     console.log(error);
@@ -227,6 +227,7 @@ try{
 Name | Type | Description 
 ------------- | ------------- | -------------
  **receiver_account_address** | **string**|  
+ **auth_key_prefix** | **string**|  
  **number_of_micro_libra** | **number**|  
  **force_offical** | **number**|  
   |   |  
@@ -248,7 +249,7 @@ Mol supported mint service to mint micro-libra coins to an account.
 const appkey = "*****" // your app key
 var client = new LibraClient("testnet", appkey);
 try{
-    data = await client.TransactionAPI.mintMol(receiver_account_address, number_of_micro_libra);
+    data = await client.TransactionAPI.mintMol(receiver_account_address, auth_key_prefix, number_of_micro_libra);
     console.log(data) //SignedTransaction
 } catch (error) {
     console.log(error);
@@ -260,6 +261,7 @@ try{
 Name | Type | Description 
 ------------- | ------------- | -------------
  **receiver_account_address** | **string**|  
+ **auth_key_prefix** | **string**|  
  **number_of_micro_libra** | **number**|  
   |   |  
 
@@ -280,7 +282,7 @@ Create account on the blockchain.
 const appkey = "*****" // your app key
 var client = new LibraClient("testnet", appkey);
 try{
-    data = await client.TransactionAPI.createAccount(account_address);
+    data = await client.TransactionAPI.createAccount(account_address, auth_key_prefix);
     console.log(data) //SignedTransaction
 } catch (error) {
     console.log(error);
@@ -292,6 +294,7 @@ try{
 Name | Type | Description 
 ------------- | ------------- | -------------
  **account_address** | **string**|  
+ **auth_key_prefix** | **string**|  
   |   |  
 
 ### Return type
