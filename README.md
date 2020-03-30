@@ -41,7 +41,7 @@ In nodejs:
 const LibraClient = require('libra-sdk-mol');
 var client = new LibraClient("testnet");
 try{
-	address = "000000000000000000000000000000000000000000000000000000000a550c18";
+	address = "0000000000000000000000000a550c18";
 	data = await client.addressAPI.getAccountBalance(address);
     console.log(data.balance);
 } catch (error) {
@@ -55,7 +55,7 @@ In browser:
 <script>
 	var client = new LibraClient("testnet");
 	try{
-		address = "000000000000000000000000000000000000000000000000000000000a550c18";
+		address = "0000000000000000000000000a550c18";
 		data = await client.addressAPI.getAccountBalance(address);
 		console.log(data.balance);
 	} catch (error) {
@@ -68,7 +68,7 @@ In browser:
 ```javascript
 // mint 123 micro-libra to address, the call is blocked until the mint is finished or failed.
 tx = await client.transactionAPI.mint(address, 123);
-assert 123 == tx.raw_txn.payload.Script.args[1].U64;
+assert 123 == tx.raw_txn.payload.Script.args[2].U64;
 // get the transaction status
 console.log(tx.transaction_info.major_status)
 ```
