@@ -84,7 +84,7 @@ describe('get balance should have address param', function () {
             ret = await client.addressAPI.getAccountBalance("bad address");
             assert.fail("not reachable.");
         }catch(error){
-            assert.equal("400: address should be length 64 hex string, real len:11", client.parseError(error));
+            assert.equal("400: address should be length 32 hex string, real len:11", client.parseError(error));
         }
         
     });
