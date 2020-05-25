@@ -1,3 +1,5 @@
+Because the new Json-rpc interface provided by Libra, this project is deprecated.
+
 Javascript SDK for Libra Network and Move Smart Contract powered by MoveOnLibra OpenAPI.
 
 ## Introduction
